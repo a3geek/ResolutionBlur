@@ -11,14 +11,14 @@ namespace ResolutionBlur
     [RequireComponent(typeof(Camera))]
     public class Blur : MonoBehaviour
     {
-        public const int MaxIntensity = 10;
+        public const int MaxIteratin = 10;
 
         [SerializeField]
         private bool validity = true;
-        [SerializeField, Range(1, MaxIntensity)]
-        private int intensity = 5;
+        [SerializeField, Range(1, MaxIteratin)]
+        private int iteration = 5;
 
-        private RenderTexture[] rts = new RenderTexture[MaxIntensity];
+        private RenderTexture[] rts = new RenderTexture[MaxIteratin];
         
         
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -35,7 +35,7 @@ namespace ResolutionBlur
             var i = 0;
 
             // Step downsampling.
-            for(i = 0; i < this.intensity; i++)
+            for(i = 0; i < this.iteration; i++)
             {
                 width /= 2;
                 height /= 2;
