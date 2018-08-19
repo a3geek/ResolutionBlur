@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ResolutionBlur
+namespace PostEffects
 {
     [AddComponentMenu("")]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Camera))]
-    public class Blur : MonoBehaviour
+    public class ResolutionBlur : MonoBehaviour
     {
         public const int MaxIteratin = 10;
 
